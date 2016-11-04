@@ -1,6 +1,8 @@
+'use strict';
+
 var matfApp = angular.module('matfLyrics', ['ui.router']);
 
-matfApp.config(function ($stateProvider, $urlRouterProvider) {
+matfApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
 
     $stateProvider.state(
@@ -13,7 +15,8 @@ matfApp.config(function ($stateProvider, $urlRouterProvider) {
         {
             name: 'search',
             url: '/search',
-            templateUrl: 'view/search.html'
+            templateUrl: 'view/search.html',
+            controller: 'SearchController'
         }
     );
-});
+}]);

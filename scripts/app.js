@@ -18,5 +18,11 @@ matfApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider
             templateUrl: 'view/search.html',
             controller: 'SearchController'
         }
+    ).state(
+        {
+            name: 'about',
+            url: '/about',
+            templateUrl: 'view/about.html'
+        }
     );
 }]);

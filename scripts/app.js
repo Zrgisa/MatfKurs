@@ -24,5 +24,12 @@ matfApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider
             url: '/about',
             templateUrl: 'view/about.html'
         }
+    ).state(
+        {
+            name: 'lyrics',
+            url: '/lyrics/:id',
+            templateUrl: 'view/lyrics.html',
+            controller: 'LyricsController'
+        }
     );
 }]);

@@ -1,14 +1,5 @@
 'use strict';
 
-matfApp.controller('SearchController', ['$scope', function ($scope) {
-    $scope.linkovi = [
-        {
-            name: 'One',
-            author: 'Metallica'
-        },
-        {
-            name: 'Vivir Mi Vida',
-            author: 'Marc Anthony'
-        }
-    ];
+matfApp.controller('SearchController', ['$scope', 'LyricsService', function ($scope, LyricsService) {
+    $scope.linkovi = LyricsService.getAllSongs();
 }]);

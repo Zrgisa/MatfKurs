@@ -1,4 +1,10 @@
 <h1>Results</h1>
 <div ng-repeat="link in linkovi">
-    {{link.name}} by {{link.author}}
+    <div class="row">
+        <div class="col-xs-6">
+            <strong><a ui-sref="lyrics({ id: link.id })">{{link.name}} by {{link.author}}</a></strong><br>
+            {{link.lyrics}}
+        </div>
+    </div>
+    <hr>
 </div>

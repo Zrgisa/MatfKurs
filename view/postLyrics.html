@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+        <form name="postSongForm" ng-submit="submit()">
+            <div class="form-group">
+                <label for="name"> Song name: </label>
+                <input id="name" class="form-control" name="songName" ng-model="songName" type="text" placeholder="Song name.."/>
+            </div>
+            <div class="form-group">
+                <label for="author"> Author: </label>
+                <input id="author" class="form-control" name="songAuthor" ng-model="songAuthor" type="text" placeholder="Author name.."/>
+            </div>
+            <div class="form-group">
+                <label for="lyrics"> Lyrics: </label>
+                <input id="lyrics" class="form-control" name="songLyrics" ng-model="songLyrics" type="text" placeholder="Lyrics.."/>
+            </div>
+            <input ng-disabled="!songAuthor || !songName || !songLyrics" class="btn btn-success" type="submit" id="submit" value="Submit" />
+        </form>
+    </div>
+</div>

@@ -31,5 +31,12 @@ matfApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider
             templateUrl: 'view/lyrics.html',
             controller: 'LyricsController'
         }
+    ).state(
+        {
+            name: 'postLyrics',
+            url: '/postLyrics',
+            templateUrl: 'view/postLyrics.html',
+            controller: 'PostController'
+        }
     );
 }]);

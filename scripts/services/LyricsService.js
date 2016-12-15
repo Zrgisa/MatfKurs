@@ -1,21 +1,14 @@
 'use strict';
 
-matfApp.service('LyricsService', function () {
+matfApp.service('LyricsService', function ($http) {
     var self = this;
-    var songs = [
-        {
-            id: 1,
-            name: 'One',
-            author: 'Metallica',
-            lyrics: 'I can\'t remember anything'
-        },
-        {
-            id: 2,
-            name: 'Vivir Mi Vida',
-            author: 'Marc Anthony',
-            lyrics: 'Voy a reír, voy a bailar'
+    var songs = [];
+
+    $http.get('api/lyrics.php').then(function (response) {
+        for (var i = 0; i < response.data.length; i++) {
+            songs.push(response.data[i]);
         }
-    ];
+    });
 
     self.getAllSongs = function () {
         return songs;

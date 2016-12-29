@@ -2,8 +2,17 @@
 <div ng-repeat="link in linkovi">
     <div class="row">
         <div class="col-xs-6">
-            <strong><a ui-sref="lyrics({ id: link.id })">{{link.name}} by {{link.author}}</a></strong><br>
+            <strong>
+                <a ui-sref="lyrics({ id: link.id })">
+                    {{link.name}} by {{link.author}}
+                </a>
+            </strong>
+            <br>
             {{link.lyrics}}
+            <br>
+            <button class="btn btn-danger" type="button" ng-click="delete(link.id)">
+                delete
+            </button>
         </div>
     </div>
     <hr>

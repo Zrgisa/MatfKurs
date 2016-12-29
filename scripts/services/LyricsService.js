@@ -4,13 +4,23 @@ matfApp.service('LyricsService', function ($http) {
     var self = this;
     var songs = [];
 
-    $http.get('api/lyrics.php').then(function (response) {
-        for (var i = 0; i < response.data.length; i++) {
-            songs.push(response.data[i]);
+    self.getAllSongs = function (search) {
+        if(search!=='') {
+            $http.get('api/lyrics.php?s=' + search).then(function (response) {
+                songs.length = 0;
+                for (var i = 0; i < response.data.length; i++) {
+                    songs.push(response.data[i]);
+                }
+            });
+        } else {
+            $http.get('api/lyrics.php').then(function (response) {
+                songs.length = 0;
+                for (var i = 0; i < response.data.length; i++) {
+                    songs.push(response.data[i]);
+                }
+            });
         }
-    });
 
-    self.getAllSongs = function () {
         return songs;
     };
 

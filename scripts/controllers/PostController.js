@@ -6,6 +6,12 @@ matfApp.controller('PostController', ['$scope', '$http', function ($scope, $http
     $scope.songLyrics = '';
 
     $scope.submit = function () {
-        alert('submit');
+        $http.get('api/post.php?name='+$scope.songName+"&author="+$scope.songAuthor+"&text="+$scope.songLyrics).then(function (response) {
+            if(response.data=="Specificiraj"){
+                window.alert("Fale parametri");
+            } else {
+                window.alert("UspesnoExi dodata pesma");
+            }
+        });
     };
 }]);

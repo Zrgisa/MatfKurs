@@ -14,7 +14,7 @@ matfApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider
     ).state(
         {
             name: 'search',
-            url: '/search',
+            url: '/search/:search',
             templateUrl: 'view/search.html',
             controller: 'SearchController'
         }

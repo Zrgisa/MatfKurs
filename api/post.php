@@ -1,7 +1,9 @@
 <?php
 
+$postData = json_decode(file_get_contents('php://input'), true);
+
 //ako je neki od potrebnih parametara prazan ispisujemo "SPECIFICIRAJ" i izlazimo
-if (empty($_GET['name']) || empty($_GET['author']) || empty($_GET['text'])) {
+if (empty($postData) || empty($postData['name']) || empty($postData['author']) || empty($postData['text'])) {
     echo 'Specificiraj';
     exit;
 }
@@ -16,9 +18,9 @@ $noviId = $niz[$duzinaNiza-1]['id'] + 1;
 
 $niz[] = [
     'id'     => $noviId,
-    'name'   => $_GET['name'],
-    'author' => $_GET['author'],
-    'lyrics' => $_GET['text'],
+    'name'   => $postData['name'],
+    'author' => $postData['author'],
+    'lyrics' => $postData['text'],
 ];
 
 //u datotetku upisujemo niz u JSON formatu
